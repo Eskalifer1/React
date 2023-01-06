@@ -1,0 +1,20 @@
+.nav {
+  grid-area: nav;
+  background-color: aqua;
+}
+
+.link a{
+  display: block;
+  padding: 20px 10px;
+  transition: .3s;
+  color: #000;
+}
+
+.link a:hover{
+  color: beige;
+  background-color: rgb(63, 63, 245);
+}
+.link a.active{
+  background-color: blue;
+  color: beige;
+}

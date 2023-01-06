@@ -1,0 +1,34 @@
+.header {
+    grid-area: header;
+    background-color: lawngreen;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-inline: 20px;
+}
+
+.header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.login{
+    color: black;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.LoginDiv{
+    border: 1px solid black;
+}
+.login:hover{
+    text-decoration: underline;
+}
+.logout{
+    color: black;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+}
