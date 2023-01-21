@@ -30,6 +30,7 @@
     font-size: 20px;
     outline: none;
     margin-bottom: 10px;
+    margin-inline: auto;
 }
 .remember{
     margin-bottom: 10px;
@@ -53,4 +54,10 @@
     border: none;
     font-size: 16px;
     font-weight: 600;
+}
+
+.captcha{
+    max-width: 120px;
+    margin-inline: auto;
+    margin-bottom: 10px;
 }

@@ -1,0 +1,71 @@
+.jobInfo {
+    width: 100%;
+    background-color: azure;
+    min-height: 100px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    padding: 5px;
+    height: 100%;
+    margin-bottom: 15px;
+}
+.contact{
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+}
+.name {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    color: crimson;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.status {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: crimson;
+    font-weight: 600;
+}
+
+.description {
+    align-self: flex-end;
+    display: flex;
+}
+
+.aboutMe{
+    display: flex;
+    align-items: center;
+}
+.aboutMe>h2 {
+    color: beige;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.aboutMe > p{
+    color: beige;
+    font-size: 18px;
+}
+
+.formButton {
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.label {
+    color: beige;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.input {
+    padding: 5px;
+    font-size: 20px;
+    outline: none;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
