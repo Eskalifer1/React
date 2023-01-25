@@ -26,14 +26,16 @@
     color: beige;
     margin-bottom: 10px;
     text-align: center;
+    color: #1677ff;
 }
 .form{
     display: flex;
     flex-direction: column;
+    color: #fff;
 }
 .title{
     font-size: 35px;
     font-weight: 700;
-    color: azure;
+    color: #1677ff;
     margin-bottom: 5px;
 }

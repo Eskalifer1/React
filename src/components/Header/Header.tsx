@@ -1,29 +1,43 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import classes from './Header.module.css';
-import logo from '../../images/HeaderLogo.png'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import classes from './Header.module.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { AppDispatch, RootState } from '../../Store/reduxStore'
+import { logout } from '../../redux/AuthReducer'
+import { Avatar, Button, Layout } from 'antd'
+import {
+    UserOutlined
+} from '@ant-design/icons';
 
-type PropsType = {
-    isAuth: boolean
-    login: string | null
-    logout: () => void
-}
+type PropsType = {}
 
-const Header: React.FC<PropsType> = (props) => {
+export const HeaderComponent: React.FC<PropsType> = ({ }) => {
+
+    const { Header } = Layout;
+
+    const isAuth = useSelector(((state: RootState) => state.Auth.isAuth))
+    const login = useSelector((state: RootState) => state.Auth.login)
+
+    const dispatch: AppDispatch = useDispatch();
+
+    const logoutFunction = () => {
+        dispatch(logout())
+    }
+
     return (
-        <header className={classes.header}>
-            <img src={logo} alt='logo'></img>
+        <Header className={classes.header}>
+            <Avatar size={64} icon={<UserOutlined />} />
             <div className={classes.loginBlock}>
-                {props.isAuth
+                {isAuth
                     ? <div className={classes.LoginDiv}>
-                        <p className={classes.login}>{props.login}</p>
-                        <p className={classes.logout} onClick={props.logout}>Logout</p>
+                        <p className={classes.login}>{login}</p>
+                        <Button danger onClick={logoutFunction}>Logout</Button>
                     </div>
-                    : <NavLink to={'/login'} className={classes.login}>Login</NavLink>}
+                    : <Button type='primary' className={classes.button}>
+                        <Link to={'/login'} className={classes.login}>Login</Link>
+                    </Button>
+                }
             </div>
-        </header>
+        </Header >
     )
 }
-
-
-export default Header;

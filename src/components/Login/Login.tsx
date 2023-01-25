@@ -6,6 +6,7 @@ import { Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../Store/reduxStore";
 import { login } from "../../redux/AuthReducer";
+import { Button } from "antd";
 
 type PropsType = {}
 
@@ -59,7 +60,7 @@ export const LoginPage: React.FC<PropsType> = ({ }) => { //Деструктир�
                         {captchaUrl && <img className={classes.captcha} src={captchaUrl} alt={'captcha'} />}
                         {captchaUrl && <Field className={classes.input} type={'text'} name={'captcha'} placeholder={'Captcha'} />}
                         {status && <div>{status}</div>}
-                        <button type={'submit'} disabled={isSubmitting} className={classes.button}>Log in</button>
+                        <Button type={'primary'} htmlType='submit' disabled={isSubmitting} className={classes.button}>Log in</Button>
                     </Form>
                 )}
             </Formik>

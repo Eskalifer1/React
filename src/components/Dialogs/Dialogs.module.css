@@ -17,12 +17,14 @@
     padding-inline: 10px;
 }
 .input{
+    border: 1px solid #1677ff;
+    border-radius: 5%;
     outline: none;
     width: 100%;
     padding-inline: 5px;
     height: 50px;
     font-size: 25px;
-    border-radius: 1%;
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 .Error{

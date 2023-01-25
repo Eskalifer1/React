@@ -7,7 +7,7 @@ import { FilterType, getUsers, setUnFollowStatus, setFollowStatus } from "../../
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrentPage, getIsFollowingInProgres, getPageSize, getTotalUserCount, getUsersData, getUsersFilter } from "../../redux/Selectors/usersSelectors";
 import { AppDispatch } from "../../Store/reduxStore";
-import { useLocation, useSearchParams } from "react-router-dom";
+import {  useSearchParams } from "react-router-dom";
 
 type PropsType = {
 }
@@ -36,7 +36,6 @@ export const Users: React.FC<PropsType> = (props) => {
     const setUnFollowStatusFunction = (id: number) => {
         dispatch(setUnFollowStatus(id))
     }
-
     const [searchParams, setSearchParams] = useSearchParams()
 
     useEffect(() => {

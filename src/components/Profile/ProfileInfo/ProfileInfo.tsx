@@ -7,6 +7,9 @@ import { useState } from 'react';
 import InfoBlock from './InfoBlockToggle/InfoBlock';
 import InfoBlockForm from './InfoBlockToggle/InfoBlockForm';
 import { ProfilePropsType } from '../Profile';
+import { Button, Upload, UploadProps } from 'antd';
+import { Image } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 
 
 
@@ -23,22 +26,40 @@ const ProfileInfo: React.FC<ProfilePropsType> = (props) => {
             props.savePhoto(e.target.files[0])
         }
     }
+    const propsUpload: UploadProps = {
+        onChange({ file, fileList }) {
+            if (file.status !== 'uploading') {
+                // @ts-ignore
+                props.savePhoto(file.originFileObj)
+            }
+        }
+    }
 
     return (
-        <div >
+        <div>
             <div className={classes.descriptionBlock}>
-                <img src={props.profile.photos.large || userPhoto} alt="Avatar" className={classes.photo} />
-                {props.isOwner && <input type={'file'} className={classes.file} onChange={onPhotoChange} />}
+                <div className={classes.flex}>
+                    <Image
+                        width={200}
+                        style={{ borderRadius: 15 }}
+                        src={props.profile.photos.large || userPhoto}
+                        className={classes.nextDiv}
+                    />
+                    {props.isOwner && <div >
+                        <Upload {...propsUpload} className={classes.flex}>
+                            <Button icon={<UploadOutlined />} style={{marginTop: 10}} type='primary'>Upload</Button>
+                        </Upload></div>}
+                </div>
                 <div className={classes.statusInfo}>
                     <h3>Status:</h3>
-                    <ProfileStatusWithHooks status={props.status || 'hi'} updateStatus={props.updateStatus} isOwner = {props.isOwner}/>
+                    <ProfileStatusWithHooks status={props.status || 'hi'} updateStatus={props.updateStatus} isOwner={props.isOwner} />
                 </div>
                 <h2 className={classes.title}>Information about job</h2>
                 {editMode
                     ? <InfoBlockForm
                         profile={props.profile}
                         saveInfo={() => { changeEditMode(false) }}
-                        updateProfileInfo = {props.updateProfileInfo}
+                        updateProfileInfo={props.updateProfileInfo}
                     />
                     : <InfoBlock
                         profile={props.profile}

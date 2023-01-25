@@ -4,7 +4,7 @@ import Preloader from "../Common/Preloader/Preloader"
 import { getIsFetching } from "../../redux/Selectors/usersSelectors"
 import { Users } from "./Users"
 
-const UsersPage: React.FC = (props) => {
+const UsersPage: React.FC = ({}) => {
 
     const isFetching = useSelector(getIsFetching)
     return <>

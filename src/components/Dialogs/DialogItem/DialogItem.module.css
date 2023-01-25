@@ -2,11 +2,8 @@
     font-size: 25px;
 }
 .dialog a{
-    color: #fff;
+    color: #1677ff;
 }
 .dialog a:hover{
     text-decoration: underline;
-}
-a.active{
-    color: blueviolet;
 }

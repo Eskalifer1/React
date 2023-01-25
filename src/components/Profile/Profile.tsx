@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProfileType } from '../../types/reducers';
-import MyPostContainer from './MyPosts/MyPostContainer';
+import MyPost from './MyPosts/MyPost';
 import classes from './Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo'
 
@@ -15,17 +15,20 @@ export type ProfilePropsType = {
 }
 
 const Profile: React.FC<ProfilePropsType> = ({ isOwner, profile, status, updateStatus, savePhoto, updateProfileInfo }) => {
+
     return (
-        <div className={classes.profile}>
-            <ProfileInfo
-                isOwner={isOwner}
-                profile={profile}
-                status={status}
-                updateStatus={updateStatus}
-                savePhoto={savePhoto}
-                updateProfileInfo={updateProfileInfo} />
-            <MyPostContainer />
-        </div>
+        <>
+            <div className={classes.profile}>
+                <ProfileInfo
+                    isOwner={isOwner}
+                    profile={profile}
+                    status={status}
+                    updateStatus={updateStatus}
+                    savePhoto={savePhoto}
+                    updateProfileInfo={updateProfileInfo} />
+                <MyPost />
+            </div>
+        </>
     )
 }
 

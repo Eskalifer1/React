@@ -78,23 +78,26 @@ export const actions = {
 }
 
 export const setUser = (id: number | null): ThunkType => async (dispatch) => {
-    let data = await ProfileAPI.getProfileUser(id);
- 
-    dispatch(actions.setUserProfile(data));
+    let data = await ProfileAPI.getProfileUser(id)
+
+    // setTimeout(() => {
+    //     dispatch(actions.setUserProfile(data))
+    // }, 3000)
+    dispatch(actions.setUserProfile(data))
 }
 export const getStatus = (id: number): ThunkType => async (dispatch) => {
     let data = await ProfileAPI.getStatus(id)
 
-    dispatch(actions.setProfileStatus(data));
+    dispatch(actions.setProfileStatus(data))
 }
 export const updateStatus = (status: string, setStatus: any): ThunkType => async (dispatch) => {
     let data = await ProfileAPI.updateStatus(status)
 
     if (data.resultCode === 0) {
-        dispatch(actions.setProfileStatus(status));
-        setStatus(null);
+        dispatch(actions.setProfileStatus(status))
+        setStatus(null)
     } else {
-        setStatus(data.messages);
+        setStatus(data.messages)
     }
 }
 export const savePhoto = (file: File): ThunkType => async (dispatch) => {
@@ -106,7 +109,7 @@ export const savePhoto = (file: File): ThunkType => async (dispatch) => {
 }
 export const updateProfileInfo = (profileInfo: ProfileType, setStatus: any): ThunkType => async (dispatch, getState) => {
 
-    const userId = getState().Auth.userID; 
+    const userId = getState().Auth.userID;
 
     let data = await ProfileAPI.updateProfileInfo(profileInfo)
 

@@ -6,6 +6,7 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .img {
@@ -14,39 +15,52 @@
     width: 100%;
 }
 
-.photo{
-    width: 192px;
-    height: 192px;
+.photo {
     align-self: center;
     border-radius: 10%;
     margin-bottom: 15px;
 }
 
-.inputStatus{
+.inputStatus {
     justify-self: center;
     font-size: 20px;
     outline: none;
     padding: 5px;
 }
+
 .textDiv {
-    color: bisque;
+    color: black;
     font-size: 25px;
 }
-.file{
+
+.file {
     margin-inline: auto;
 }
 
-.statusInfo{
+.statusInfo {
     display: flex;
     align-items: center;
 }
-.statusInfo > h3{
-    color: beige;
+
+.statusInfo>h3 {
+    color: black;
     font-size: 30px;
     margin-right: 10px;
+    margin-bottom: 0;
 }
+
 .title {
-    color: cadetblue;
+    color: #1677ff;
     font-size: 28px;
     margin-bottom: 10px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.nextDiv + div{
+    border-radius: 15px;
 }

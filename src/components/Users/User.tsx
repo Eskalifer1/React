@@ -3,6 +3,7 @@ import classes from './Users.module.css'
 import userPhoto from '../../images/defaultLogo.png'
 import { NavLink } from 'react-router-dom';
 import { UserDataType } from "../../types/reducers";
+import { Button } from "antd";
 
 type PropsType = {
     user: UserDataType
@@ -21,10 +22,10 @@ let User: React.FC<PropsType> = ({ user, followingInProgres, setFollowStatus, se
                     </NavLink>
                 </div>
                 {user.followed
-                    ? <button disabled={followingInProgres.some(i => i === user.id)} onClick={() => setFollowStatus(user.id)}
-                        className={classes.profileButton}>UnFollow</button>
-                    : <button disabled={followingInProgres.some(i => i === user.id)} onClick={() => setUnFollowStatus(user.id)}
-                        className={classes.profileButton}>Follow</button>}
+                    ? <Button type='primary' disabled={followingInProgres.some(i => i === user.id)} onClick={() => setFollowStatus(user.id)}
+                        className={classes.profileButton}>UnFollow</Button>
+                    : <Button type='primary' disabled={followingInProgres.some(i => i === user.id)} onClick={() => setUnFollowStatus(user.id)}
+                        className={classes.profileButton}>Follow</Button>}
             </div>
             <div className={classes.info}>
                 <div className={classes.name}>{user.name}</div>

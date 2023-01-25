@@ -3,6 +3,7 @@ import { Form, Formik, Field, ErrorMessage } from 'formik';
 import classes from './InfoBlockToggle.module.css'
 import ProfileFormScheme from "../../../FormValidation/ProfileUpdateValidation";
 import { ProfileType } from "../../../../types/reducers";
+import { Button } from "antd";
 
 type PropsType = {
     profile: ProfileType
@@ -30,7 +31,7 @@ const InfoBlockForm: React.FC<PropsType> = (props) => {
                 {({ status }) => {
                     return (
                         <Form>
-                            <button type={'submit'} className={classes.formButton}>Save Changes</button>
+                            <Button type='primary' htmlType='submit' style={{marginBottom: 10}}>Save Changes</Button>
                             {status && <div className={classes.label}>{status}</div>}
                             <div className={classes.jobInfo}>
                                 <div className={classes.name}>
@@ -38,12 +39,11 @@ const InfoBlockForm: React.FC<PropsType> = (props) => {
                                     <ErrorMessage name="fullName" component="p" className={classes.label} />
                                 </div>
                                 <div className={classes.status}>
-                                    <label htmlFor={'lookingForAJob'} className={`${classes.label}`}> Looking for a job ? </label>
+                                    <label htmlFor={'lookingForAJob'} className={`${classes.lookingForAJob}`}> Looking for a job ? </label>
                                     <Field className={`${classes.input}`} type={'checkbox'} name={'lookingForAJob'} />
                                     <ErrorMessage name="lookingForAJob" component="p" className={classes.label} />
                                 </div>
                                 <div className={classes.description}>
-                                    <label htmlFor={'lookingForAJobDescription'} className={`${classes.label}`}></label>
                                     <Field className={`${classes.input}`} type={'text'} name={'lookingForAJobDescription'} placeholder={'Description'} />
                                     <ErrorMessage name="lookingForAJobDescription" component="p" className={classes.label} />
                                 </div>

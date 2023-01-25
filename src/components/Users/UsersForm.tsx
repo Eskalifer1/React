@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import { ErrorMessage, Field, Form, Formik, FormikHelpers } from "formik";
 import React from "react";
 import { useSelector } from "react-redux";
@@ -52,12 +53,7 @@ const UserForm: React.FC<PropsType> = React.memo(({ onFilterChanged }) => { //Д
                             <option value="false">Unfollowed</option>
                         </Field>
 
-                        {/* <div className={classes.remember}>
-                            <Field type={'checkbox'} name={'rememberMe'} />
-                            <label htmlFor={'rememberMe'} className={classes.label}> remember me </label>
-                        </div> */}
-
-                        <button type={'submit'} disabled={isSubmitting} className={classes.button}>Search</button>
+                        <Button type={'primary'} htmlType='submit' disabled={isSubmitting} className={classes.button}>Search</Button>
                     </Form>
                 )}
             </Formik>

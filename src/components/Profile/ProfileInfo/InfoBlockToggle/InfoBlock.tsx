@@ -1,3 +1,4 @@
+import { Button } from "antd";
 import React from "react"
 import { ProfileType } from "../../../../types/reducers";
 import Contacts from "../Contacts/Contacts";
@@ -12,7 +13,7 @@ type PropsType = {
 const InfoBlock: React.FC<PropsType> = (props) => {
     return (
         <div>
-            {props.isOwner && <button onClick={props.activateEditMode} className={classes.formButton}>Change Info</button>}
+            {props.isOwner && <Button onClick={props.activateEditMode} style={{marginBottom: 10}} type='primary'>Change Info</Button>}
             <div className={classes.jobInfo}>
                 <p className={classes.name}>{props.profile.fullName}</p>
                 {props.profile.lookingForAJob ? <p className={classes.status}>Looking for a Job</p> : <p className={classes.status}>Not Interested In a Job</p>}

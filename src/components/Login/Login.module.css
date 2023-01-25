@@ -7,8 +7,9 @@
 }
 
 .title {
-    color: beige;
-    margin-bottom: 30px;
+    color: #1677ff;
+    margin-block: 15px;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -19,7 +20,7 @@
 }
 
 .label {
-    color: beige;
+    color: #1677ff;
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -27,6 +28,7 @@
 
 .input {
     padding: 5px;
+    height: 35px;
     font-size: 20px;
     outline: none;
     margin-bottom: 10px;
@@ -46,14 +48,7 @@
 }
 
 .button {
-    display: inline-block;
     margin-inline: auto;
-    padding: 8px 30px;
-    background-color: #7eb462;
-    cursor: pointer;
-    border: none;
-    font-size: 16px;
-    font-weight: 600;
 }
 
 .captcha{

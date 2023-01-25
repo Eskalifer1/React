@@ -4,13 +4,15 @@ import { dialogReducer } from '../redux/dialogReducer';
 import { usersReducer } from '../redux/usersReducer';
 import { AuthReducer } from '../redux/AuthReducer';
 import { appReducer } from '../redux/AppReducer';
+import { chatReducer } from '../redux/ChatReducer';
 
 const rootReducer = combineReducers({
     profilePage: profileReducer,
     dialogsPage: dialogReducer,
     UsersPage: usersReducer,
     Auth: AuthReducer,
-    app: appReducer
+    app: appReducer,
+    chat: chatReducer
 })
 
 let store = configureStore({

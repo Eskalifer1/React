@@ -3,14 +3,21 @@ import classes from './MyPost.module.css';
 import Post from './Post/Post';
 import { Formik, Form, ErrorMessage, Field } from "formik";
 import DialogsScheme from '../../FormValidation/DialogsFormScheme';
-import { postDataType } from '../../../types/reducers';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../../Store/reduxStore';import { actions } from '../../../redux/profileReducer';
+import { Button } from 'antd';
+;
 
-type PropsType = {
-    postData: Array<postDataType>
-    addPost: (message: string) => void
-}
+type PropsType = {}
 
-const MyPost: React.FC<PropsType> = ({addPost, postData}) => {
+const MyPost: React.FC<PropsType> = ({}) => {
+    const postData = useSelector((state:RootState) => state.profilePage.postData)
+    const dispatch: AppDispatch = useDispatch()
+
+    const addPost = (message: string) => {
+        dispatch(actions.addPost(message))
+    }
+
     return (
         <div className={classes.textBlock}>
             <div className={classes.enterSection}>
@@ -54,7 +61,7 @@ const FormMyPost: React.FC<FormMyPostType> = (props) => {
                     </div>
                     <ErrorMessage className={classes.Error} name="message" component="div" />
 
-                    <button type={'submit'} className={classes.send}>Add Post</button>
+                    <Button type='primary' htmlType='submit' className={classes.send}>Add Post</Button>
                 </Form>
             )}
         </Formik >

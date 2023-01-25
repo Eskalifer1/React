@@ -76,7 +76,7 @@ export const usersReducer = (state = initialState, action: ActionType): initialS
     }
 }
 
-const actions = {
+export const actions = {
     follow: (userID: number) => {
         return {
             type: 'USERS/FOLLOW-USER',
@@ -131,8 +131,8 @@ const actions = {
 export const getUsers = (currentPage: number, pageSize: number, filter: FilterType): ThunkType => async (dispatch) => {
     dispatch(actions.setIsFetching(true))
     dispatch(actions.setFilter(filter))
-    let data = await UserAPI.getUsers(currentPage, pageSize, filter.term, filter.friend);
     dispatch(actions.setCurrentPage(currentPage))
+    let data = await UserAPI.getUsers(currentPage, pageSize, filter.term, filter.friend);
     dispatch(actions.setIsFetching(false))
     dispatch(actions.setUsers(data.items))
     dispatch(actions.setTotalUserCount(data.totalCount))

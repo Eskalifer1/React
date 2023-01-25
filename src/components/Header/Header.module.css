@@ -6,6 +6,7 @@
     justify-content: space-between;
     width: 100%;
     padding-inline: 20px;
+    min-height: 70px;
 }
 
 .header img {
@@ -15,20 +16,30 @@
     cursor: pointer;
 }
 .login{
-    color: black;
+    color: #1677ff;
     font-size: 20px;
     font-weight: 800;
     cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
 .LoginDiv{
-    border: 1px solid black;
-}
-.login:hover{
-    text-decoration: underline;
+    line-height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .logout{
-    color: black;
+    color: #1677ff;
     font-size: 20px;
     font-weight: 800;
     cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
